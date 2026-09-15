@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-%9d)0^f2wj7ym+#mjw@^$ouix7g6m!%sa@(6kh%jip0vy)$+!&
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://backend-clever.onrender.com"
+    "backend-clever.onrender.com"
 ]
 
 CORS_ALLOWED_ORIGINS = [
