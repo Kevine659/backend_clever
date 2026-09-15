@@ -19,7 +19,7 @@ const getCategoryImage = (image) => {
         return image
     }
 
-    return `http://127.0.0.1:7000${image.startsWith("/") ? image : `/${image}`}`
+    return `https://backend-clever.onrender.com${image.startsWith("/") ? image : `/${image}`}`
 }
 
 const getCategoryRoute = (category) => {

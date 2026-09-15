@@ -77,7 +77,7 @@ const getProductImage = (image) => {
 
     const baseURL =
         api.defaults.baseURL ||
-        "http://127.0.0.1:7000/api"
+        "https://backend-clever.onrender.com/api"
 
     const serverURL =
         baseURL

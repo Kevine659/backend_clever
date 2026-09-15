@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
+    "https://clever-frontend.vercel.app/"
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [

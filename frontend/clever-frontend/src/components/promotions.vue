@@ -55,7 +55,7 @@ const getProductImage = (image) => {
     if (image.startsWith("data:image")) {
         return image
     }
-    const baseURL = api.defaults.baseURL || "http://127.0.0.1:7000/api"
+    const baseURL = api.defaults.baseURL || "https://backend-clever.onrender.com/api"
     const serverURL = baseURL.replace(/\/api\/?$/,"").replace(/\/$/,"")
     return `${serverURL}${image.startsWith("/") ? image : `/${image}`}`
 }
