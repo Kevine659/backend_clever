@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%9d)0^f2wj7ym+#mjw@^$ouix7g6m!%sa@(6kh%jip0vy)$+!&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "https://backend-clever.onrender.com"
+]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
