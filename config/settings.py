@@ -27,13 +27,14 @@ SECRET_KEY = 'django-insecure-%9d)0^f2wj7ym+#mjw@^$ouix7g6m!%sa@(6kh%jip0vy)$+!&
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "backend-clever.onrender.com"
+    # "backend-clever.onrender.com"
+    # "http://127.0.0.1:7000/"
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
-    "https://clever-frontend.vercel.app/"
+    # "https://clever-frontend.vercel.app/"
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
@@ -64,6 +65,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,6 +122,8 @@ AUTH_USER_MODEL = "accounts.User"
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+# configuration en ligne de la base de donnees sur render 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -130,6 +134,19 @@ DATABASES = {
         "PORT": "3306",
     }
 }
+
+# configuration en local de l application de la base de donnees 
+# la base de donnee a ete configurer sur alwaysdata 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "clever_db",
+#         "USER": "root",
+#         "PASSWORD": "",
+#         "HOST": "localhost",
+#         "PORT": "3306",
+#     }
+# }
 
 
 # Password validation
