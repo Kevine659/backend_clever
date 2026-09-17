@@ -27,14 +27,14 @@ SECRET_KEY = 'django-insecure-%9d)0^f2wj7ym+#mjw@^$ouix7g6m!%sa@(6kh%jip0vy)$+!&
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # "backend-clever.onrender.com"
-    # "http://127.0.0.1:7000/"
+    "backend-clever.onrender.com",
+    "http://127.0.0.1:7000/"
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
     "http://127.0.0.1:5174",
-    # "https://clever-frontend.vercel.app/"
+    "https://clever-frontend.vercel.app/"
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
@@ -185,6 +185,21 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# WhiteNoise permet à Django de servir correctement les fichiers
+# statiques en production, notamment ceux de /admin/
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+
+    "staticfiles": {
+        "BACKEND": (
+            "whitenoise.storage."
+            "CompressedManifestStaticFilesStorage"
+        ),
+    },
+}
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
